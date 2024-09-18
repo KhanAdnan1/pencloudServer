@@ -17,7 +17,6 @@ const checkEmaiAndSendOtp = async (req, res) => {
 
         const otp = generateOtp();
         otps[email] = otp
-
         await sendEmail(email, otp)
         return res.status(200).json(new ApiResponse(200, {otp},"OTP sent to your email."));
         

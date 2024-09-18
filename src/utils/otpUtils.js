@@ -4,8 +4,8 @@ const generateOtp = () => {
     return Math.floor(1000 + Math.random() * 9000).toString();  // 4-digit OTP
 };
 
-const sendEmail = (email, otp) => {
-    const transporter = nodemailer.createTransport({
+const sendEmail = async (email, otp) => {
+    const transporter =  nodemailer.createTransport({
         service: "gmail",
         secure:true,
         port:465,
